@@ -1,0 +1,168 @@
+{
+  "name": "aw_chem",
+  "type": "Gun",
+  "compatibleAttachments": [
+    "aw_chem_scope"
+  ],
+  "maxAmmoCapacity": 60,
+  "compatibleAmmo": ["aw_assault_rifles_ammo", "ammocreative"],
+  "damage": 9.0,
+  "rpm": 820,
+  "ammoUi": "aw_ammo_ui",
+  "fireModes": ["AUTOMATIC"],
+  "fireSound": "aw_chem_fire",
+  "drawCooldownDuration": 900,
+  "gunRecoilInitialAmplitude": 0.1,
+  "shakeRecoilAmplitude": 0.3,
+  "shakeRecoilSpeed": 0.3,
+  "viewRecoilAmplitude": 0.5,
+  "inspectCooldownDuration": 5270,
+  "jumpMultiplier": 0.12,
+  "firstPersonFallbackAnimations": "walking_animations",
+  "gunRandomizationAmplitude": 0.0025,
+  "prepareFireCooldownDuration":910,
+  "muzzleFlashOverlay": "textures/flash_effect/chemrails_muzzle_flash.png",
+  "toggle_aiming": true,
+  "aimingEnabled" : true,
+  "noADSDuringInspect": true,
+  "disableAdsDuringreload": false,
+  "sustainedRecoil": {
+    "posZCap": 0.22,  // weapon moves backward slightly each shot.
+    "posZIncrement": 0.05, // after about 3 shots, it reaches the maximum sustained rearward movement.
+    "pitchIncrement": -0.04, // additional upward climb over sustained fire.
+    "posYIncrement": 0.3 //  vertical displacement buildup.
+  },
+  //Here Idle Animations Goes as planned so I wont break anything
+
+
+  "idleAnimations": [
+    {
+      "name": "animation.model.idle",
+      "duration": 400
+    }
+  ],
+
+
+  // Now starts Inspect Animations
+  "inspectAnimations": [
+    {
+      "name": "animation.model.inspect",
+      "duration": 5270
+    }
+  ],
+
+
+  // Draw Animations also supports empty ones
+  "drawAnimations": [
+    {
+      "name": "animation.model.draw",
+      "duration": 900
+    }
+  ],
+
+
+
+
+
+
+
+  "features": [
+    {
+      "type": "AdsConstraint",
+      "enabled": true,
+      "camera": true,
+      "cameraConstraint" : 0.6
+    },
+    {
+      "type": "custom_crosshair",
+      "enabled": true,
+      "texture": "textures/custom_crosshairs/argos_weaponry_crosshair.png",
+      "layout": "pointblank"
+    },
+    {
+      "type": "AdsReloadZoomControl",
+      "enabled": true,
+      "zoom_type": "smooth",
+      // Available Values
+      // linear
+      //smooth
+      //ease_in
+      //ease_out
+      //ease_in_out
+      //sine_in
+      //sine_out
+      //sine_in_out
+      "amount": 0.08
+    },
+
+    {
+      "type": "Melee",
+      "enabled": true,
+      "damage": 8.0,
+      "cooldown": 20,
+      "reach": 3.0,
+      "damageCatsandOcalotsEntities" : true,
+      "meleeAnimations": [
+        {
+          "name": "animation.model.melee_1",
+          "duration": 700,
+          "preMelee": 200
+        },
+        {
+          "name": "animation.model.melee_2",
+          "duration": 870,
+          "preMelee": 220
+        },
+        {
+          "name": "animation.model.melee_3",
+          "duration": 850,
+          "preMelee": 220
+        }
+      ]
+    },
+
+
+
+    {
+      "type": "Aiming",
+      "zoom": 0.25,
+      "condition": {
+        "doesNotHaveAttachmentGroup": "chemrail_scopes"
+      }
+    }
+  ],
+
+  "defaultAttachments": [
+    "aw_chem_scope"
+  ],
+  "phasedReloads": [
+    {
+      "phase": "RELOADING",
+      "condition": "reloadIterationIndex == 0",
+      "duration": 2520,
+      "animation": "animation.model.reload_empty"
+    },
+    {
+      "phase": "RELOADING",
+      "condition": "reloadIterationIndex > 0",
+      "duration": 2520,
+      "animation": "animation.model.reload"
+    }
+  ],
+
+
+  // Effects For Muzzle Flash
+  "effects": [
+    {
+      "phase": "hit_scan_acquired",
+      "name": "chemrails_tracers"
+    },
+
+    {
+      "phase": "firing",
+      "name": "chemrails_muzzle_flash"
+    }
+  ]
+
+
+}

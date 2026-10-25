@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "pointblank:item/craftable_items/ammo/aw_lever_action_rifles_ammo"
+	}
+}

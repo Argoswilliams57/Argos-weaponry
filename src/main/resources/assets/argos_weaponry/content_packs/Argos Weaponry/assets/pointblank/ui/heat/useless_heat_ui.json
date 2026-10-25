@@ -1,0 +1,30 @@
+{
+  "name": "useless_heat_ui",
+  "size": {
+    "width": 83,
+    "height": 83
+  },
+  "padding": {
+    "x": 22,
+    "y": 10
+  },
+  "inertia": 0.0,
+  "location": "BOTTOM_RIGHT",
+  "textures": {
+    "background": "textures/gui/heat.png",
+    "progress": "textures/gui/heat_progress.png",
+    "mask": "textures/gui/heat_progress_mask.png"
+  },
+  "percentageText": {
+    "x": 9,
+    "y": 62,
+    "size": 1.5499997,
+    "emptyColor": "#ffff1700",
+    "fullColor": "#ffffffff",
+    "border": false,
+    "dropShadow": false,
+    "italic": false,
+    "bold": true,
+    "enabled": true
+  }
+}

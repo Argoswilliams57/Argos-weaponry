@@ -1,0 +1,51 @@
+{
+  "itemGroup.argos_weaponary.items": "Argos Weaponry",
+  "item.pointblank.exr_ro635": "Ro635",
+  "item.pointblank.exr_spaz12": "Spas 12",
+  "item.pointblank.aw_mp5_classic": "Mp5 Classic",
+  "item.pointblank.aw_makarov": "Makarov Pistol",
+  "item.pointblank.aw_zsp45": "ZSP 45",
+  "item.pointblank.aw_an94": "AN94 Russian Assault Rifle",
+  "item.pointblank.aw_cz": "Cz 75 Bren 805 A1",
+  "item.pointblank.aw_chem": "Chemrail",
+  "item.pointblank.aw_axmc": "AXMC Sniper",
+
+  "item.pointblank.aw_ar_stock_1": "AR Stock 1",
+  "item.pointblank.aw_light_stock": "Factory Light Stock",
+  "item.pointblank.aw_medium_stock": "Factory Medium Stock",
+  "item.pointblank.aw_heavy_stock": "Factory Heavy Stock",
+  "item.pointblank.aw_light_extended_mag_1": "Light Extended Magazine 1",
+  "item.pointblank.aw_light_extended_mag_2": "Light Extended Magazine 2",
+  "item.pointblank.aw_light_extended_mag_3": "Light Extended Magazine 3",
+
+
+
+
+  "item.pointblank.aw_pistols_ammo": "Pistol's Ammunition",
+  "item.pointblank.aw_smg_ammo": "Sub Machine Gun's Ammunition",
+  "item.pointblank.aw_shotgun_ammo": "Shotgun's Ammunition",
+  "item.pointblank.aw_snipers_ammo": "Snipers Ammunition",
+
+  "item.pointblank.aw_assault_rifles_ammo": "Assault Rifle's Ammunition",
+  "item.pointblank.aw_lever_action_rifles_ammo": "Lever Action Rifle's Ammunition",
+
+
+
+  "item.pointblank.aw_chem_scope": "Chemrail's Scope",
+
+  "item.pointblank.aw_axmc_sniper_scope": "AxMC's Scope",
+
+
+
+  "item.pointblank.aw_marlin": "Marlin model 780",
+
+
+  "label.pointblank.fireMode.semi_auto": "Semi Auto",
+  "label.pointblank.fireMode.full_auto": "Full auto",
+  "label.pointblank.fireMode.3rnd_burst": "3 Round Burst",
+  "label.pointblank.fireMode.2_rnd_burst": "2 Round Burst",
+  "label.pointblank.fireMode.toggle_action": "Toggle Action Mode",
+  "label.pointblank.fireMode.pump_action": "Pump Action Mode",
+
+  "label.pointblank.fireMode.single_action": "Single Action"
+}

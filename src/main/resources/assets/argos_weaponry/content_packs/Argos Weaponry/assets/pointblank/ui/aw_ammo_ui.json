@@ -1,0 +1,51 @@
+{
+  "name": "aw_ammo_ui",
+  "size": {
+    "width": 100,
+    "height": 50
+  },
+  "padding": {
+    "x": 12,
+    "y": 10
+  },
+  "inertia": 0.02,
+  "location": "bottom_right",
+  "texture": "textures/ammo_ui/aw_ammo_ui.png",
+  "reloadText": "...",
+  "ammoText": {
+    "x": 16,
+    "y": 21,
+    "size": 0.9,
+    "color": "#f5ffffff",
+    "emptyColor": "#eaff4300",
+    "border": false,
+    "dropShadow": true,
+    "italic": false,
+    "bold": false,
+    "digitalStyle": true
+  },
+  "capacityText": {
+    "x": 64,
+    "y": 21,
+    "size": 1.0,
+    "color": "#ffffffff",
+    "border": false,
+    "dropShadow": true,
+    "italic": false,
+    "bold": false,
+    "enabled": true,
+    "hideOnReloadText": false,
+    "showSlash": false
+  },
+  "fireModeText": {
+    "x": 10,
+    "y": 38,
+    "size": 0.85,
+    "color": "#e8ffffff",
+    "border": true,
+    "dropShadow": true,
+    "italic": false,
+    "bold": true,
+    "enabled": true
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "name": "aw_makarov",
+  "type": "Gun",
+  "maxAmmoCapacity": 12,
+  "compatibleAmmo": ["ammocreative" ,"aw_pistols_ammo"],
+  "damage": 6,
+  "rpm": 260,
+  "fireModes": ["SINGLE"],
+  "fireSound": "aw_makarov_fire",
+  "aimingZoom": 0.1,
+  "ammoUi": "aw_ammo_ui",
+  "gunRecoilInitialAmplitude": 0.2,
+  "shakeRecoilAmplitude": 0.8,
+  "shakeRecoilSpeed": 3,
+  "viewRecoilAmplitude": 2.0,
+  "toggle_aiming": true,
+  "aimingEnabled" : true,
+  "noADSDuringInspect": true,
+  "disableAdsDuringreload": true,
+  "dualWielding": false,
+  "firstPersonFallbackAnimations": "walking_animations",
+
+//  // this is an Extended Version but much better you can use  as much default animations you want
+//    "firstPersonFallbackAnimations": [
+//      "walking_animations",
+//      "default_animations/pistol_anims/aw_pistol_dualwield_righthand",
+//      "default_animations/pistol_anims/aw_pistol_dualwield_lefthand"
+//    ],
+//Here Idle Animations Goes as planned so I wont break anything
+
+
+  "idleAnimations": [
+    {
+      "name": "animation.model.idle",
+      "duration": 270,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.idle_empty",
+      "duration": 270,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+  // Now starts Inspect Animations
+  "inspectAnimations": [
+
+
+    // Here we have Inspect animation But if i want to trigger alternative inspect animation like extended mag inspect , i will have to edit this
+    // line with condition wise
+    {
+      "name": "animation.model.inspect_ext_empty",
+      "duration": 4700,
+      "condition": {
+        "allOf": [
+          "ammoCount == 0",
+          {
+            "hasAttachmentGroup": "light_extended_mags"
+          }
+
+        ]
+      }
+    },
+    {
+      "name": "animation.model.inspect_ext",
+      "duration": 4580,
+      "condition": {
+        "allOf": [
+          "ammoCount > 0",
+          {
+            "hasAttachmentGroup": "light_extended_mags"
+          }
+
+        ]
+      }
+    },
+
+
+
+      // Now the  Normal inspect make sure to have the condition to doesnot have attachment group
+
+    // Normal inspect
+    {
+      "name": "animation.model.inspect",
+      "duration": 4570,
+
+      "condition": {
+        "allOf": [
+          "ammoCount > 0",
+          {
+            "doesNotHaveAttachmentGroup": "light_extended_mags"
+          }
+
+        ]
+      }
+
+
+    },
+    {
+      "name": "animation.model.inspect_empty",
+      "duration": 4570,
+
+      "condition": {
+        "allOf": [
+          "ammoCount == 0",
+          {
+            "doesNotHaveAttachmentGroup": "light_extended_mags"
+          }
+
+        ]
+      }
+
+
+    }
+  ],
+
+
+  "fireAnimations" : [
+    {
+      "name": "animation.model.fire",
+      "condition": "ammoCount > 1"
+
+    },
+    {
+      "name": "animation.model.fire_last",
+      "condition": "ammoCount < 1"
+    }
+
+  ],
+
+
+// Draw Animations also supports empty ones
+  "drawAnimations": [
+    {
+      "name": "animation.model.draw",
+      "duration": 650,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.draw_empty",
+      "duration": 650,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+// Now here is the crazy part thing called Features on how do I want my gun to Behave  whern certain attachmentments putted
+
+  "features": [
+
+
+    // Now we will use muzzle Flash Effect after putting a muzzle attachment
+    {
+      "type": "MuzzleFlash",
+      "effects": [
+        {
+          "phase": "firing",
+          "name": "muzzle_flash"
+        }
+      ],
+
+      // If the Smg Suprerssors or any kind of suppressors are putted then muzzle flash will now shown
+      "condition": {
+        "allOf": [
+          {
+            "isUsingDefaultMuzzle": true
+          },
+          {
+            "doesNotHaveAttachmentGroup": "smg_suppressors"
+          }
+        ]
+      }
+
+    },
+
+    {
+      "type": "custom_crosshair",
+      "enabled": true,
+      "texture": "textures/custom_crosshairs/argos_weaponry_crosshair.png",
+      "layout": "pointblank"
+    },
+
+
+    {
+      "type": "Melee",
+      "enabled": true,
+      "damage": 15.0,
+      "cooldown": 20,
+      "reach": 3.0,
+      "damageCatsandOcalotsEntities" : true,
+      "meleeAnimations": [
+        {
+          "name": "animation.model.melee_1",
+          "duration": 770,
+          "preMelee": 230
+        },
+        {
+          "name": "animation.model.melee_2",
+          "duration": 670,
+          "preMelee": 220
+        }
+      ]
+    },
+
+
+    // Now If I Want my default ironsights to be dissappeard when putting a scope "Part Visibility feature needed
+    {
+      "type": "PartVisibility",
+      "parts": [
+
+        // hiding the Extended Magzines
+        {
+          "name": "mag_extended_1",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "extended_mag_1"
+          }
+        },
+
+        {
+          "name": "mag_default",
+          "visible": false,
+          "condition": {
+            "hasAttachmentGroup": "light_extended_mags"
+          }
+        }
+
+
+
+      ]
+    }
+
+  ],
+
+  "compatibleAttachmentGroups": [
+    "light_extended_mags"
+  ],
+
+
+
+
+  "phasedReloads": [
+
+     // First we will call it the Normal Empty Reload
+    {
+      "phase": "RELOADING",
+      "duration": 2570,
+      "animation": "animation.model.reload_empty",
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex == 0",
+          {
+            "onEmptyReload": true
+          },
+          {
+            "doesNotHaveAttachmentGroup": "extended_mag_1"
+          }
+        ]
+      }
+    },
+
+    // Now the the Extended magazine empty Reload
+
+    {
+      "phase": "RELOADING",
+      "duration": 2630,
+      "animation": "animation.model.reload_ext_empty",
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex == 0",
+          {
+            "onEmptyReload": true
+          },
+          {
+            "hasAttachmentGroup": "extended_mag_1"
+          }
+        ]
+      }
+    },
+
+    // Here we will do the Normal Relod when the gun is not empty
+    {
+      "phase": "RELOADING",
+      "duration": 1750,
+      "animation": "animation.model.reload",
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex > 0",
+          {
+            "onEmptyReload": false
+          },
+          {
+            "doesNotHaveAttachmentGroup": "extended_mag_1"
+          }
+        ]
+      }
+    },
+
+
+    {
+      "phase": "RELOADING",
+      "duration": 1800,
+      "animation": "animation.model.reload_ext",
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex > 0",
+          {
+            "onEmptyReload": false
+          },
+          {
+            "hasAttachmentGroup": "extended_mag_1"
+          }
+        ]
+      }
+    }
+
+
+
+
+  ],
+
+
+  // Effects For Muzzle Flash
+  "effects": [
+    {
+      "phase": "hit_scan_acquired",
+      "name": "tracer"
+    },
+    {
+      "phase": "firing",
+      "name": "muzzle_flash_small"
+    }
+  ]
+
+}

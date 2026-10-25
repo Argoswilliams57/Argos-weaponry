@@ -1,0 +1,16 @@
+{
+  "type": "pointblank:default",
+  "ingredients": [
+    {
+      "count": 10,
+      "tag": "forge:ingots/iron"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:black_dye"
+    }
+  ],
+  "result": {
+    "item": "pointblank:aw_marlin"
+  }
+}

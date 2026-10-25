@@ -1,0 +1,124 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base":
+  {
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "texture_size": [
+    256,
+    256
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [
+        0,
+        -1.75,
+        0
+      ],
+      "scale": [
+        0.35,
+        0.35,
+        0.35
+      ]
+    },
+    "thirdperson_lefthand": {
+      "translation": [
+        0,
+        -1.75,
+        0
+      ],
+      "scale": [
+        0.35,
+        0.35,
+        0.35
+      ]
+    },
+    "firstperson_righthand": {
+      "translation": [
+        0.25,
+        -8.25,
+        -7.25
+      ]
+    },
+    "firstperson_lefthand": {
+      "translation": [
+        0.25,
+        -8.25,
+        -7.25
+      ]
+    },
+    "ground": {
+      "translation": [
+        0.25,
+        -1.25,
+        5
+      ],
+      "scale": [
+        0.35,
+        0.35,
+        0.35
+      ]
+    },
+    "gui": {
+      "rotation": [
+        -164.3,
+        27.7,
+        -178.39
+      ],
+      "translation": [
+        3.25,
+        0,
+        0
+      ],
+      "scale": [
+        0.3,
+        0.3,
+        0.3
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        -180,
+        89,
+        -180
+      ],
+      "translation": [
+        6,
+        -1.25,
+        -1.75
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "on_shelf": {
+      "rotation": [
+        91.83,
+        57.22,
+        -91.53
+      ],
+      "translation": [
+        6,
+        -1.25,
+        -1.75
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "pointblank:item/gun_icons/aw_axmc"
+      }
+    }
+  }
+}

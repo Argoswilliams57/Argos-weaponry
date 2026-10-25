@@ -1,0 +1,567 @@
+{
+  "name": "aw_an94",
+  "type": "Gun",
+  "maxAmmoCapacity": 30,
+  "compatibleAmmo": ["ammocreative" , "aw_assault_rifles_ammo"],
+  "damage": 6,
+  "rpm": 820,
+  "fireModes": ["SINGLE"],
+  "fireSound": "aw_an94_fire",
+  "aimingZoom": 0.5,
+  "gunRecoilInitialAmplitude": 0.1,
+  "ammoUi": "aw_ammo_ui",
+  "shakeRecoilAmplitude": 0.2,
+  "shakeRecoilSpeed": 2,
+  "viewRecoilAmplitude": 0.7,
+  "drawCooldownDuration": 770,
+  "toggle_aiming": true,
+  "aimingEnabled" : true,
+  "noADSDuringInspect": true,
+  "disableAdsDuringreload": false,
+  "firstPersonFallbackAnimations": "walking_animations",
+
+  // this is an Extended Version but much better you can use  as much default animations you want
+//  "firstPersonFallbackAnimations": [
+//    "default_animations/pistol_anims/walking_animations",
+//    "default_animations/pistol_anims/idle_animations",
+//    "default_animations/pistol_anims/dual_wield_animations"
+//  ]
+
+  "sustainedRecoil": {
+    "posZCap": 0.32,  // weapon moves backward slightly each shot.
+    "posZIncrement": 0.05, // after about 3 shots, it reaches the maximum sustained rearward movement.
+    "pitchIncrement": -0.04, // additional upward climb over sustained fire.
+    "posYIncrement": 0.3 //  vertical displacement buildup.
+  },
+
+//Here Idle Animations Goes as planned so I wont break anything
+
+
+  "idleAnimations": [
+    {
+      "name": "animation.model.idle",
+      "duration": 400,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.idle_empty",
+      "duration": 400,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+// Now starts Inspect Animations
+  "inspectAnimations": [
+
+    // In this Senerio we will play inspect animation where  the light stock is not Equipped
+    {
+      "name": "animation.model.inspect",
+      "duration": 9180,
+
+      "condition": {
+        "allOf": [
+          "ammoCount > 0",
+          {
+            "doesNotHaveAttachmentGroup": "light_stocks"
+          }
+        ]
+      }
+    },
+    {
+      "name": "animation.model.inspect_empty",
+      "duration": 9180,
+      "condition": {
+        "allOf": [
+          "ammoCount == 0",
+          {
+            "doesNotHaveAttachmentGroup": "light_stocks"
+          }
+        ]
+      }
+    },
+
+    // In this Senecio we will play inspect animation where  the light stock is  Equipped
+    {
+      "name": "animation.model.inspect_folded",
+      "duration": 9180,
+
+      "condition": {
+        "allOf": [
+          "ammoCount > 0",
+          {
+            "hasAttachmentGroup": "light_stocks"
+          }
+        ]
+      }
+    },
+
+    {
+      "name": "animation.model.inspect_folded_empty",
+      "duration": 9180,
+      "condition": {
+        "allOf": [
+          "ammoCount == 0",
+          {
+            "hasAttachmentGroup": "light_stocks"
+          }
+        ]
+      }
+    }
+
+
+
+
+
+
+  ],
+
+
+// Draw Animations also supports empty ones
+  "drawAnimations": [
+    {
+      "name": "animation.model.draw",
+      "duration": 780,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.draw_empty",
+      "duration": 780,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+// Now here is the crazy part thing called Features on how do I want my gun to Behave  whern certain attachmentments putted
+
+  "features": [
+
+// Aiming Feature Must Required if you want to use scopes functional after putted
+    {
+      "type": "Aiming",
+      "zoom": 0.25,
+      "condition": {
+        "doesNotHaveAttachmentGroup": "ar_sightsandscopes"
+      }
+    },
+
+    {
+      "type": "AdsConstraint",
+      "enabled": true,
+      "camera": true,
+      "cameraConstraint" : 0.7
+    },
+
+    {
+      "type": "custom_crosshair",
+      "enabled": true,
+      "texture": "textures/custom_crosshairs/argos_weaponry_crosshair.png",
+      "layout": "pointblank"
+    },
+
+    // For Static single image.png simply use this  replace the layout of "pointblank" with  "size" :32 any number you like
+//    {
+//      "type": "custom_crosshair",
+//      "enabled": true,
+//      "texture": "textures/item/custom_crosshairs/my_static_crosshair.png",
+//      "size": 32
+//    },
+
+
+
+
+
+    // The biggest is the Bullet holes feature with extensive amount of customizability
+    {
+      "type": "bulletHoles",
+      "bullet_holes": {
+        "enabled": true,
+        "default_texture": "pointblankextra:textures/bullet_holes/default.png",
+        "size": 0.12,
+        "lifetime": 1200,
+        "max_per_chunk": 128,
+        "max_block_particles": 22,
+        "max_distance": 16,
+
+        "soundsPlayOnperBlockHit": {
+          "enabled": true,
+          "default": "pointblankextra:bullet_holes.default",
+
+          "impact_volume": 1.9,
+          "surface_sounds": {
+            "minecraft:oak_planks": "minecraft:block.wood.hit",
+            "minecraft:stone": "minecraft:block.stone.hit",
+            "minecraft:dirt": "minecraft:block.gravel.hit",
+            "minecraft:sand": "minecraft:block.sand.hit"
+          },
+          "tag_sounds": {
+            "minecraft:logs": "minecraft:block.wood.hit",
+            "c:glass_blocks": "pointblankextra:bullet_holes.glass",
+            "minecraft:planks": "minecraft:block.wood.hit"
+          }
+        },
+
+
+        "surface_textures": {
+          "minecraft:oak_planks": "pointblankextra:textures/bullet_holes/wood.png",
+          "minecraft:stone": "pointblankextra:textures/bullet_holes/stone.png",
+          "minecraft:iron_block": "pointblankextra:textures/bullet_holes/metal.png"
+        },
+
+        "tag_textures": {
+          "minecraft:logs": "pointblankextra:textures/bullet_holes/wood.png",
+          "minecraft:planks": "pointblankextra:textures/bullet_holes/wood.png"
+        }
+      }
+    },
+
+    {
+      "type": "AdsReloadZoomControl",
+      "enabled": true,
+      "zoom_type": "smooth",
+      // Available Values
+      // linear
+      //smooth
+      //ease_in
+      //ease_out
+      //ease_in_out
+      //sine_in
+      //sine_out
+      //sine_in_out
+      "amount": 0.06
+    },
+
+    {
+      "type": "Melee",
+      "enabled": true,
+      "damage": 8.0,
+      "cooldown": 20,
+      "reach": 3.0,
+      "knockback": 3.0,
+      "angleRange": 40,
+      "damageCatsandOcalotsEntities" : true,
+      "meleeAnimations": [
+        {
+          "name": "animation.model.melee_1",
+          "duration": 700,
+          "preMelee": 200
+        },
+        {
+          "name": "animation.model.melee_2",
+          "duration": 870,
+          "preMelee": 220
+        },
+        {
+          "name": "animation.model.melee_3",
+          "duration": 850,
+          "preMelee": 220
+        }
+      ]
+    },
+
+
+
+    //Now finally teh fire sounds will change after putting a suppressor
+    {
+      "type": "Sound",
+      "fireSounds": [
+        {
+          "sound": "aw_an94_suppressed",
+          "volume": 0.8,
+          "condition": {
+            "allOf": [
+              {
+                "hasAttachmentGroup": "ar_suppressors"
+              }
+            ]
+          }
+        }
+
+//        {
+//          "sound": "aw_an94_fire",
+//          "volume": 0.8,
+//          "condition": "random"
+//        },
+//        {
+//          "sound": "aw_an94_fire_2",
+//          "volume": 0.8,
+//          "condition": "random"
+//        },
+//        {
+//          "sound": "aw_an94_fire_3",
+//          "volume": 0.8,
+//          "condition": "random"
+//        }
+
+
+
+      ]
+    },
+
+
+
+
+    // Now If I Want my default ironsights to be dissappeard when putting a scope "Part Visibility feature needed
+    {
+      "type": "PartVisibility",
+      "parts": [
+        {
+          "name": "scope_mount",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "ar_sightsandscopes"
+          }
+        },
+        // Since i want the Light Stock group to be Visisble when puting a light stock , this part visibility will come handy
+        {
+          "name": "light_stock",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "light_stocks"
+          }
+        },
+        {
+          "name": "default_stock",
+          "visible": false,
+          "condition": {
+            "hasAttachmentGroup": "factory_stock"
+          }
+        }
+      ]
+    },
+
+    // Now we will use muzzle Flash Effect after putting a muzzle attachment
+    {
+      "type": "MuzzleFlash",
+      "effects": [
+        {
+          "phase": "firing",
+          "name": "muzzle_flash"
+        }
+      ],
+      // If the Smg Suprerssors or any kind of suppressors are putted then muzzle flash will now shown
+      "condition": {
+        "allOf": [
+          {
+            "isUsingDefaultMuzzle": true
+          },
+          {
+            "doesNotHaveAttachmentGroup": "ar_suppressors"
+          }
+        ]
+      }
+
+    },
+
+
+
+
+    // If i want to have fire mode switching animations we will use Dynamic fire modes
+
+    {
+      "type": "FireMode",
+      "fireModes": [
+
+        // Heere are the perfect Fire Modes if i want to have realistic approach
+        {
+          "name": "full_auto",
+          "displayName": "label.pointblank.fireMode.full_auto",
+          "type": "AUTOMATIC",
+          "rpm": 820,
+          "damage": 6,
+          "fireAnimations": [
+            {
+              "name": "animation.model.fire",
+              "condition": "ammoCount > 1"
+
+            },
+            {
+              "name": "animation.model.fire_last",
+              "condition": "ammoCount < 1"
+            }
+          ],
+          "shakeRecoilAmplitude": 0.04,
+          "shakeRecoilSpeed": 1.0,
+          "shakeRecoilDuration": 120,
+          "enableFireModeAnimations": [
+            {
+              "name": "animation.model.switch",
+              "duration": 330
+            }
+          ]
+        },
+
+        {
+          "name": "semi_auto",
+          "displayName": "label.pointblank.fireMode.semi_auto",
+          "type": "SINGLE",
+          "rpm": 800,
+          "damage": 6,
+          "fireAnimations": [
+            {
+              "name": "animation.model.fire",
+              "condition": "ammoCount > 1"
+
+            },
+            {
+              "name": "animation.model.fire_last",
+              "condition": "ammoCount < 1"
+            }
+          ],
+          "shakeRecoilAmplitude": 0.35,
+          "shakeRecoilSpeed": 2.0,
+          "shakeRecoilDuration": 350,
+          "enableFireModeAnimations": [
+            {
+              "name": "animation.model.switch",
+              "duration": 330
+            }
+          ]
+        },
+
+
+        {
+          "name": "2_rnd_burst",
+          "displayName": "label.pointblank.fireMode.2_rnd_burst",
+          "type": "BURST",
+          "rpm": 830,
+          "burstShots": 2,
+          "damage": 6,
+          "fireAnimations": [
+            {
+              "name": "animation.model.fire",
+              "condition": "ammoCount > 1"
+
+            },
+            {
+              "name": "animation.model.fire_last",
+              "condition": "ammoCount < 1"
+            }
+          ],
+          "shakeRecoilAmplitude": 0.35,
+          "shakeRecoilSpeed": 2.0,
+          "shakeRecoilDuration": 350,
+          "enableFireModeAnimations": [
+            {
+              "name": "animation.model.switch",
+              "duration": 330
+            }
+          ]
+        }
+
+      ]
+    }
+
+
+
+  ],
+
+
+  "compatibleAttachmentGroups": [
+    "ar_muzzle",
+    "cantedrail",
+    "ar_sightsandscopes",
+    "sights_group",
+    "light_stocks"
+  ],
+  "compatibleAttachments": [
+    "cantedrail"
+  ],
+
+
+  // Since i want to Have Extended Magazine Reload Animations based on attachments , and atachment groups so for me ill go with Attachment group
+  "phasedReloads": [
+
+    // This will play when Light stock is NOT Equipped attached
+    {
+      "phase": "RELOADING",
+      "duration": 3000,
+      "animation": "animation.model.reload_empty",
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex == 0",
+          {
+            "onEmptyReload": true
+          },
+          {
+            "doesNotHaveAttachmentGroup": "light_stocks"
+          }
+        ]
+      }
+    },
+
+
+    // This will play when Light stockl is Equipped attached
+    {
+      "phase": "RELOADING",
+      "duration": 3000,
+      "animation": "animation.model.reload_empty_folded",
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex == 0",
+          {
+            "onEmptyReload": true
+          },
+          {
+            "hasAttachmentGroup": "light_stocks"
+          }
+        ]
+      }
+    },
+
+
+    {
+      "phase": "RELOADING",
+      "duration": 2280,
+      "animation": "animation.model.reload",
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex > 0",
+          {
+            "onEmptyReload": false
+          },
+          {
+            "doesNotHaveAttachmentGroup": "light_stocks"
+          }
+        ]
+      }
+    },
+
+
+    {
+      "phase": "RELOADING",
+      "duration": 2280,
+      "animation": "animation.model.reload_folded",
+
+
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex > 0",
+          {
+            "onEmptyReload": false
+          },
+          {
+            "hasAttachmentGroup": "light_stocks"
+          }
+        ]
+      }
+
+
+    }
+  ],
+
+
+  // Effects For Muzzle Flash
+  "effects": [
+    {
+      "phase": "hit_scan_acquired",
+      "name": "tracer"
+    },
+    {
+      "phase": "firing",
+      "name": "muzzle_flash_small"
+    }
+  ]
+
+
+}

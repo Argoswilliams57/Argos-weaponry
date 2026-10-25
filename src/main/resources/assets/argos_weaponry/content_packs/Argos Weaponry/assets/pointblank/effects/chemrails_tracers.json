@@ -1,0 +1,24 @@
+{
+	"type": "detached_projectile",
+	"name": "chemrails_tracers",
+	"texture": "textures/tracer_effects/chemrails_tracers.png",
+	"blendMode": "ADDITIVE",
+	"duration" : 200,
+	"blade": { 
+		"count": 5,
+		"brightness": 1.4,
+		"width": 0.5,
+		"minU": 0,
+		"maxU": 0.75
+	},
+	"face": {
+		"brightness": 2,
+		"width": 0.4,
+		"minU": 0.75,
+		"maxU": 1
+	},
+	"numRotations": 3,
+	"glow": true,
+	"initialSpeed": 300,
+	"acceleration": -10
+}

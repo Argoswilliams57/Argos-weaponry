@@ -1,0 +1,17 @@
+{
+  "type": "pointblank:default",
+  "ingredients": [
+    {
+      "count": 4,
+      "tag": "forge:ingots/iron"
+    },
+    {
+      "count": 3,
+      "tag": "forge:gunpowder"
+    }
+  ],
+  "result": {
+    "count": 64,
+    "item": "pointblank:aw_lever_action_rifles_ammo"
+}
+}

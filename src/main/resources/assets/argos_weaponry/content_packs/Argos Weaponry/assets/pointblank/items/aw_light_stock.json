@@ -1,0 +1,24 @@
+{
+  "name" : "aw_light_stock",
+  "type": "Attachment",
+  "category": "stock",
+  "groups": [
+    "light_stocks",
+    "factory_stock"
+  ],
+  "features" : [
+
+    {
+      "type": "Recoil",
+      "recoilModifier": 1.2,
+      "condition": {
+        "hasAttachmentGroup": "light_stocks"
+      }
+    },
+    {
+      "type": "Accuracy",
+      "accuracyModifier": 1.4
+    }
+
+  ]
+}

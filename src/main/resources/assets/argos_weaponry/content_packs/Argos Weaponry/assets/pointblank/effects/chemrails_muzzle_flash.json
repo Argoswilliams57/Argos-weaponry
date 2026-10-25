@@ -1,0 +1,14 @@
+{
+	"type": "muzzle_flash",
+	"name": "chemrails_muzzle_flash",
+	"texture": "textures/flash_effect/chemrails_muzzle_flash.png",
+        "blendMode": "ADDITIVE",
+	"width": 0.8,
+	"duration" : 80,
+	"sprites": {
+		"type": "random",
+		"rows": 1,
+		"columns": 9,
+		"fps": 60
+	}
+}

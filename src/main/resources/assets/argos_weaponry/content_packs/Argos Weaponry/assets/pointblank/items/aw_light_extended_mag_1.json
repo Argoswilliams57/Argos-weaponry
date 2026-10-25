@@ -1,0 +1,21 @@
+{
+  "name": "aw_light_extended_mag_1",
+  "type": "Attachment",
+  "category": "magazine",
+  "groups": [
+    "light_extended_mags",
+    "extended_mag_1"
+  ],
+  "features": [
+    {
+      "type": "AmmoCapacity",
+      "ammoCapacity": 35,
+      "condition": {
+        "hasAttachmentGroup": "extended_mag_1"
+      }
+    }
+
+
+
+  ]
+}

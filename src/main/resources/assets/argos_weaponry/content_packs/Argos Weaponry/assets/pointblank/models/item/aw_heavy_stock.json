@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "pointblank:item/craftable_items/stocks/aw_heavy_stock"
+	}
+}

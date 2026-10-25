@@ -1,0 +1,20 @@
+{
+  "type": "pointblank:default",
+  "ingredients": [
+    {
+      "count": 35,
+      "item": "pointblank:guninternals"
+    },
+    {
+      "count": 29,
+      "item": "pointblank:gunmetal_ingot"
+    },
+    {
+      "count": 3,
+      "tag": "forge:ingots/gold"
+    }
+  ],
+  "result": {
+    "item": "pointblank:aw_an94"
+  }
+}

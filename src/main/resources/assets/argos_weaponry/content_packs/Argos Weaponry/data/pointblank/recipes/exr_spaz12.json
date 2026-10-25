@@ -1,0 +1,20 @@
+{
+  "type": "pointblank:default",
+  "ingredients": [
+    {
+      "count": 56,
+      "item": "pointblank:gunmetal_ingot"
+    },
+    {
+      "count": 37,
+      "item": "pointblank:guninternals"
+    },
+    {
+      "count": 34,
+      "tag": "forge:ingots/iron"
+    }
+  ],
+  "result": {
+    "item": "pointblank:exr_spaz12"
+  }
+}

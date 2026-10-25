@@ -1,0 +1,325 @@
+{
+  "name": "aw_cz",
+  "type": "Gun",
+  "maxAmmoCapacity": 30,
+  "compatibleAmmo": ["ammocreative" , "aw_assault_rifles_ammo"],
+  "damage": 6,
+  "rpm": 820,
+  "fireModes": ["SINGLE"],
+  "fireSound": "aw_cz_fire",
+  "aimingZoom": 0.3,
+  "ammoUi": "aw_ammo_ui",
+  "gunRecoilInitialAmplitude": 0.2,
+  "shakeRecoilAmplitude": 0.5,
+  "shakeRecoilSpeed": 2,
+  "viewRecoilAmplitude": 1.1,
+  "drawCooldownDuration": 800,
+  "toggle_aiming": true,
+  "aimingEnabled" : true,
+  "noADSDuringInspect": true,
+  "disableAdsDuringreload": false,
+  "sustainedRecoil": {
+    "posZCap": 0.22,  // weapon moves backward slightly each shot.
+    "posZIncrement": 0.05, // after about 3 shots, it reaches the maximum sustained rearward movement.
+    "pitchIncrement": -0.04, // additional upward climb over sustained fire.
+    "posYIncrement": 0.3 //  vertical displacement buildup.
+  },
+  "glowingParts": [
+    {
+      "name": "sight_illuminated"
+    }
+  ],
+  "firstPersonFallbackAnimations": "walking_animations",
+//Here Idle Animations Goes as planned so I wont break anything
+
+
+  "idleAnimations": [
+    {
+      "name": "animation.model.idle",
+      "duration": 400,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.idle_empty",
+      "duration": 400,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+// Now starts Inspect Animations
+  "inspectAnimations": [
+    {
+      "name": "animation.model.inspect",
+      "duration": 6130,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.inspect_empty",
+      "duration": 6130,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+// Draw Animations also supports empty ones
+  "drawAnimations": [
+    {
+      "name": "animation.model.draw",
+      "duration": 800,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.draw_empty",
+      "duration": 800,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+// Now here is the crazy part thing called Features on how do I want my gun to Behave  whern certain attachmentments putted
+
+  "features": [
+
+// Aiming Feature Must Required if you want to use scopes functional after putted
+    {
+      "type": "Aiming",
+      "zoom": 0.25,
+      "condition": {
+        "doesNotHaveAttachmentGroup": "ar_sightsandscopes"
+      }
+    },
+
+    {
+      "type": "custom_crosshair",
+      "enabled": true,
+      "texture": "textures/custom_crosshairs/argos_weaponry_crosshair.png",
+      "layout": "pointblank"
+    },
+
+    {
+      "type": "AdsConstraint",
+      "enabled": true,
+      "camera": true,
+      "cameraConstraint" : 0.6
+    },
+
+    {
+      "type": "AdsReloadZoomControl",
+      "enabled": true,
+      "zoom_type": "smooth",
+      // Available Values
+      // linear
+      //smooth
+      //ease_in
+      //ease_out
+      //ease_in_out
+      //sine_in
+      //sine_out
+      //sine_in_out
+      "amount": 0.08
+    },
+
+    {
+      "type": "Melee",
+      "enabled": true,
+      "damage": 8.0,
+      "cooldown": 20,
+      "reach": 3.0,
+      "damageCatsandOcalotsEntities" : true,
+      "meleeAnimations": [
+        {
+          "name": "animation.model.melee_1",
+          "duration": 700,
+          "preMelee": 200
+        },
+        {
+          "name": "animation.model.melee_2",
+          "duration": 870,
+          "preMelee": 220
+        },
+        {
+          "name": "animation.model.melee_3",
+          "duration": 850,
+          "preMelee": 220
+        }
+      ]
+    },
+
+
+
+    // Now If I Want my default ironsights to be dissappeard when putting a scope "Part Visibility feature needed
+    {
+      "type": "PartVisibility",
+      "parts": [
+        {
+          "name": "sight",
+          "visible": false,
+          "condition": {
+            "hasAttachmentGroup": "ar_sightsandscopes"
+          }
+        }
+      ]
+    },
+
+
+    //Now finally teh fire sounds will change after putting a suppressor
+    {
+      "type": "Sound",
+      "fireSounds": [
+        {
+          "sound": "aw_cz_suppressed",
+          "volume": 0.5,
+          "condition": {
+            "allOf": [
+              {
+                "hasAttachmentGroup": "ar_suppressors"
+              }
+            ]
+          }
+        },
+        {
+          "sound": "aw_cz_fire",
+          "volume": 1
+        }
+
+
+
+      ]
+    },
+
+
+
+
+    // Now we will use muzzle Flash Effect after putting a muzzle attachment
+    {
+      "type": "MuzzleFlash",
+      "effects": [
+        {
+          "phase": "firing",
+          "name": "muzzle_flash"
+        }
+      ],
+
+      // If the Smg Suprerssors or any kind of suppressors are putted then muzzle flash will now shown
+      "condition": {
+        "allOf": [
+          {
+            "isUsingDefaultMuzzle": true
+          },
+          {
+            "doesNotHaveAttachmentGroup": "ar_suppressors"
+          }
+        ]
+      }
+
+    },
+
+
+
+
+
+
+
+
+
+    // If i want to have fire mode switching animations we will use Dynamic fire modes
+
+    {
+      "type": "FireMode",
+      "fireModes": [
+        {
+          "name": "full_auto",
+          "displayName": "label.pointblank.fireMode.full_auto",
+          "type": "AUTOMATIC",
+          "rpm": 810,
+          "damage": 6,
+          "animationName": "animation.model.fire",
+          "shakeRecoilAmplitude": 0.5,
+          "shakeRecoilSpeed": 2,
+          "shakeRecoilDuration": 120,
+          "enableFireModeAnimations": [
+            {
+              "name": "animation.model.switch",
+              "duration": 500,
+              "condition": "ammoCount > 0"
+            },
+            {
+              "name": "animation.model.switch_empty",
+              "duration": 500,
+              "condition": "ammoCount == 0"
+            }
+          ]
+        },
+
+        {
+          "name": "semi_auto",
+          "displayName": "label.pointblank.fireMode.semi_auto",
+          "type": "SINGLE",
+          "rpm": 820,
+          "damage": 6,
+          "animationName": "animation.model.fire",
+          "shakeRecoilAmplitude": 0.5,
+          "shakeRecoilSpeed": 2,
+          "shakeRecoilDuration": 350,
+          "enableFireModeAnimations": [
+            {
+              "name": "animation.model.switch",
+              "duration": 500,
+              "condition": "ammoCount > 0"
+            },
+            {
+              "name": "animation.model.switch_empty",
+              "duration": 500,
+              "condition": "ammoCount == 0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+
+  "compatibleAttachmentGroups": [
+    "ar_muzzle",
+    "cantedrail",
+    "ar_sightsandscopes",
+    "sights_group",
+    "grip_attachments",
+    "underbarrel"
+
+
+  ],
+  "compatibleAttachments": [
+    "cantedrail"
+  ],
+
+  "phasedReloads": [
+    {
+      "phase": "RELOADING",
+      "condition": "reloadIterationIndex == 0",
+      "duration": 3580,
+      "animation": "animation.model.reload_empty"
+    },
+    {
+      "phase": "RELOADING",
+      "condition": "reloadIterationIndex > 0",
+      "duration": 2200,
+      "animation": "animation.model.reload"
+    }
+  ],
+
+
+// Effects For Muzzle Flash
+  "effects": [
+    {
+      "phase": "hit_scan_acquired",
+      "name": "tracer"
+    },
+    {
+      "phase": "firing",
+      "name": "muzzle_flash_small"
+    }
+  ]
+
+}

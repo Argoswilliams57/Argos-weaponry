@@ -1,0 +1,248 @@
+{
+  "name": "aw_axmc",
+  "type": "Gun",
+  "maxAmmoCapacity": 10,
+  "compatibleAmmo": ["aw_snipers_ammo", "ammocreative"],
+  "damage": 35.6,
+  "rpm": 52,
+  "fireModes": ["SINGLE"],
+  "fireSound": "aw_axmc_fire",
+  "gunRecoilInitialAmplitude": 0.2,
+  "shakeRecoilAmplitude": 2.2,
+  "shakeRecoilSpeed": 0.5,
+  "ammoUi": "aw_ammo_ui",
+  "viewRecoilAmplitude": 4.5,
+  "jumpMultiplier": 0.12,
+  "toggle_aiming": true,
+  "aimingEnabled" : true,
+  "noADSDuringInspect": true,
+  "disableAdsDuringreload": false,
+  "firstPersonFallbackAnimations": "walking_animations",
+  "sustainedRecoil": {
+    "posZCap": 0.22,  // weapon moves backward slightly each shot.
+    "posZIncrement": 0.05, // after about 3 shots, it reaches the maximum sustained rearward movement.
+    "pitchIncrement": -0.04, // additional upward climb over sustained fire.
+    "posYIncrement": 0.3 //  vertical displacement buildup.
+  },
+
+  //Here Idle Animations Goes as planned so I wont break anything
+
+
+  "idleAnimations": [
+    {
+      "name": "animation.model.idle",
+      "duration": 370,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.idle_empty",
+      "duration": 370,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+  // Now starts Inspect Animations
+  "inspectAnimations": [
+    {
+      "name": "animation.model.inspect",
+      "duration": 8000,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.inspect_empty",
+      "duration": 8000,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+  // Draw Animations also supports empty ones
+  "drawAnimations": [
+    {
+      "name": "animation.model.draw",
+      "duration": 750,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.draw_first",
+      "duration": 1420,
+      "condition": "ammoCount == 10"
+    },
+    {
+      "name": "animation.model.draw_empty",
+      "duration": 710,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+
+
+
+
+  "features": [
+    {
+      "type": "Aiming",
+      "zoom": 0.25,
+      "condition": {
+        "doesNotHaveAttachmentGroup": "snipers_sights"
+      }
+    },
+    {
+      "type": "custom_crosshair",
+      "enabled": true,
+      "texture": "textures/custom_crosshairs/argos_weaponry_crosshair.png",
+      "layout": "pointblank"
+    },
+
+
+    {
+      "type": "AdsConstraint",
+      "enabled": true,
+      "camera": true,
+      "cameraConstraint" : 0.6
+    },
+
+    {
+      "type": "AdsReloadZoomControl",
+      "enabled": true,
+      "zoom_type": "smooth",
+      // Available Values
+      // linear
+      //smooth
+      //ease_in
+      //ease_out
+      //ease_in_out
+      //sine_in
+      //sine_out
+      //sine_in_out
+      "amount": 0.08
+    },
+
+    {
+      "type": "Melee",
+      "enabled": true,
+      "damage": 8.0,
+      "cooldown": 20,
+      "reach": 3.0,
+      "damageCatsandOcalotsEntities" : true,
+      "meleeAnimations": [
+        {
+          "name": "animation.model.melee_1",
+          "duration": 700,
+          "preMelee": 200
+        },
+        {
+          "name": "animation.model.melee_2",
+          "duration": 870,
+          "preMelee": 220
+        },
+        {
+          "name": "animation.model.melee_3",
+          "duration": 850,
+          "preMelee": 220
+        }
+      ]
+    },
+
+
+    //Now finally teh fire sounds will change after putting a suppressor
+    {
+      "type": "Sound",
+      "fireSounds": [
+        {
+          "sound": "aw_axmc_suppressed",
+          "volume": 0.5,
+          "condition": {
+            "allOf": [
+              {
+                "hasAttachmentGroup": "ar_suppressors"
+              }
+            ]
+          }
+        },
+        {
+          "sound": "aw_axmc_fire",
+          "volume": 2.6
+        }
+
+
+
+      ]
+    },
+
+
+
+
+    // Now we will use muzzle Flash Effect after putting a muzzle attachment
+    {
+      "type": "MuzzleFlash",
+      "effects": [
+        {
+          "phase": "firing",
+          "name": "muzzle_flash"
+        }
+      ],
+
+      // If the Smg Suprerssors or any kind of suppressors are putted then muzzle flash will now shown
+      "condition": {
+        "allOf": [
+          {
+            "isUsingDefaultMuzzle": true
+          },
+          {
+            "doesNotHaveAttachmentGroup": "ar_suppressors"
+          }
+        ]
+      }
+
+    }
+  ],
+
+  "compatibleAttachmentGroups": [
+    "ar_muzzle",
+    "cantedrail",
+    "ar_sightsandscopes",
+    "sights_group",
+    "grip_attachments",
+    "underbarrel",
+    "snipers_sights"
+
+
+  ],
+
+  "defaultAttachments": [
+    "aw_axmc_sniper_scope"
+  ],
+
+  "phasedReloads": [
+    {
+      "phase": "RELOADING",
+      "condition": "reloadIterationIndex == 0",
+      "duration": 3210,
+      "animation": "animation.model.reload_empty"
+    },
+    {
+      "phase": "RELOADING",
+      "condition": "reloadIterationIndex > 0",
+      "duration": 2670,
+      "animation": "animation.model.reload"
+    }
+  ],
+
+
+  // Effects For Muzzle Flash
+  "effects": [
+    {
+      "phase": "hit_scan_acquired",
+      "name": "tracer"
+    },
+    {
+      "phase": "firing",
+      "name": "muzzle_flash_small"
+    }
+  ]
+
+
+}

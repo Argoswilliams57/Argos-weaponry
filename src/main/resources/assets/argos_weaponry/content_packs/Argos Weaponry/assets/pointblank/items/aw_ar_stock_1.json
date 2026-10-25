@@ -1,0 +1,25 @@
+{
+  "name" : "aw_ar_stock_1",
+  "type": "Attachment",
+  "category": "stock",
+  "groups": [
+    "aw_ar_stocks",
+    "factory_stock"
+  ],
+  "features" : [
+
+    {
+      "type": "Recoil",
+      "recoilModifier": 0.1,
+      "condition": {
+        "hasAttachmentGroup": "aw_ar_stocks"
+      }
+    },
+    {
+      "type": "Accuracy",
+      "accuracyModifier": 1.4
+    }
+
+  ]
+
+}

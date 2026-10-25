@@ -1,0 +1,295 @@
+{
+  "name": "exr_spaz12",
+  "type": "Gun",
+  "maxAmmoCapacity": 8,
+  "compatibleAmmo": ["ammocreative", "aw_shotgun_ammo"],
+  "damage": 2.1,
+  "maxAmmoPerReloadIteration": 1,
+  "rpm": 920,
+  "fireModes": ["SINGLE"],
+  "fireSound": "exr_spaz12_fire",
+  "aimingZoom": 0.15,
+  "ammoUi": "aw_ammo_ui",
+  "gunRecoilInitialAmplitude": 0.01,
+  "shakeRecoilAmplitude": 0.1,
+  "shakeRecoilSpeed": 2,
+  "viewRecoilAmplitude": 0.2,
+  "firstPersonFallbackAnimations": "walking_animations",
+  "toggle_aiming": true,
+  "aimingEnabled" : true,
+  "noADSDuringInspect": true,
+  "disableAdsDuringreload": false,
+  "sustainedRecoil": {
+    "posZCap": 0.22,  // weapon moves backward slightly each shot.
+    "posZIncrement": 0.05, // after about 3 shots, it reaches the maximum sustained rearward movement.
+    "pitchIncrement": -0.04, // additional upward climb over sustained fire.
+    "posYIncrement": 0.3 //  vertical displacement buildup.
+  },
+
+//Here Idle Animations Goes as planned so I wont break anything
+
+
+  "idleAnimations": [
+    {
+      "name": "animation.model.idle",
+      "duration": 9960,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.idle_empty",
+      "duration": 9960,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+  // Draw Animations also supports empty ones
+  "drawAnimations": [
+    {
+      "name": "animation.model.draw",
+      "duration": 960,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.draw_empty",
+      "duration": 960,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+  // Now starts Inspect Animations
+  "inspectAnimations": [
+    {
+      "name": "animation.model.inspect",
+      "duration": 4250,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.inspect_empty",
+      "duration": 4250,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+
+// Now here is the crazy part thing called Features on how do I want my gun to Behave  whern certain attachmentments putted
+
+  "features": [
+
+
+    //Now finally teh fire sounds will change after putting a suppressor
+    {
+      "type": "Sound",
+      "fireSounds": [
+        {
+          "sound": "exr_spaz12_suppressed",
+          "volume": 1,
+          "condition": {
+            "allOf": [
+              {
+                "hasAttachment": "sg_suppressor"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+
+
+
+
+
+
+
+    // Now we will use muzzle Flash Effect after putting a muzzle attachment
+    {
+      "type": "MuzzleFlash",
+      "effects": [
+        {
+          "phase": "firing",
+          "name": "muzzle_flash"
+        }
+      ],
+
+      // If the shotgun Suprerssors or any kind of suppressors are putted then muzzle flash will now shown
+      "condition": {
+        "allOf": [
+          {
+            "isUsingDefaultMuzzle": true
+          },
+          {
+            "doesNotHaveAttachment": "sg_suppressor"
+          }
+        ]
+      }
+
+    },
+
+
+    {
+      "type": "AdsConstraint",
+      "enabled": true,
+      "camera": true,
+      "cameraConstraint" : 0.6
+    },
+
+    {
+      "type": "AdsReloadZoomControl",
+      "enabled": true,
+      "zoom_type": "smooth",
+      // Available Values
+      // linear
+      //smooth
+      //ease_in
+      //ease_out
+      //ease_in_out
+      //sine_in
+      //sine_out
+      //sine_in_out
+      "amount": 0.08
+    },
+    {
+      "type": "custom_crosshair",
+      "enabled": true,
+      "texture": "textures/custom_crosshairs/argos_weaponry_crosshair.png",
+      "layout": "pointblank"
+    },
+    {
+      "type": "Melee",
+      "enabled": true,
+      "damage": 8.0,
+      "cooldown": 20,
+      "reach": 3.0,
+      "damageCatsandOcalotsEntities" : true,
+      "meleeAnimations": [
+        {
+          "name": "animation.model.melee_1",
+          "duration": 700,
+          "preMelee": 200
+        },
+        {
+          "name": "animation.model.melee_2",
+          "duration": 870,
+          "preMelee": 220
+        },
+        {
+          "name": "animation.model.melee_3",
+          "duration": 850,
+          "preMelee": 220
+        }
+      ]
+    },
+
+
+
+
+    // If i want to have fire mode switching animations we will use Dynamic fire modes
+
+    {
+      "type": "FireMode",
+      "fireModes": [
+        {
+          "name": "toggle_action",
+          "displayName": "label.pointblank.fireMode.toggle_action",
+          "type": "SINGLE",
+          "rpm": 170,
+          "damage": 2.7,
+          "pelletCount": 35,
+          "pelletSpread": 0.1,
+          "animationName": "animation.model.fire",
+          "shakeRecoilAmplitude": 0.14,
+          "shakeRecoilSpeed": 1.1,
+          "shakeRecoilDuration": 250,
+          "enableFireModeAnimations": [
+            {
+              "name": "animation.model.switch",
+              "duration": 420
+            }
+          ]
+        },
+
+
+        {
+          "name": "pump_action",
+          "displayName": "label.pointblank.fireMode.pump_action",
+          "type": "SINGLE",
+          "rpm": 65,
+          "damage": 2.8,
+          "pelletCount": 35,
+          "pelletSpread": 0.08,
+          "animationName": "animation.model.fire_pump_action",
+          "shakeRecoilAmplitude": 0.14,
+          "shakeRecoilSpeed": 1.2,
+          "shakeRecoilDuration": 250,
+          "enableFireModeAnimations": [
+            {
+              "name": "animation.model.switch",
+              "duration": 420
+            }
+          ]
+        }
+      ]
+    }
+
+
+  ],
+
+  "compatibleAttachments": [
+    "sg_suppressor"
+  ],
+
+
+
+  "phasedReloads": [
+    {
+      "phase": "PREPARING",
+      "condition": "reloadIterationIndex == -1",
+      "duration": 380,
+      "animation": "animation.model.reload_start_empty"
+    },
+    {
+      "phase": "PREPARING",
+      "condition": "reloadIterationIndex >= 0",
+      "duration": 380,
+      "animation": "animation.model.reload_start"
+    },
+
+    {
+      "phase": "RELOADING",
+      "condition": "reloadIterationIndex == 0",
+      "duration": 1330,
+      "animation": "animation.model.load_first"
+    },
+
+    {
+      "phase": "RELOADING",
+      "condition": "reloadIterationIndex > 0",
+      "duration": 750,
+      "animation": "animation.model.reload_loop"
+    },
+    {
+      "phase": "COMPLETETING",
+      "condition": "reloadIterationIndex >= 0",
+      "duration": 670,
+      "animation": "animation.model.reload_finish"
+    }
+  ],
+
+
+
+
+
+  "effects": [
+    {
+      "phase": "hit_scan_acquired",
+      "name": "tracer"
+    },
+    {
+      "phase": "firing",
+      "name": "muzzle_flash_small"
+    }
+  ]
+}

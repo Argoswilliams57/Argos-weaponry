@@ -1,0 +1,29 @@
+{
+  "name": "aw_chem_scope",
+  "type": "Attachment",
+  "category": "scope",
+  "groups": [
+    "chemrail_scopes",
+    "snipers_sights"
+
+  ],
+  "features": [
+    {
+      "type": "Reticle",
+      "texture": "textures/gui/chemrail_scope.png"
+    },
+    {
+      "type": "Aiming",
+      "zoom": 0.7
+    },
+    {
+      "type": "PIP",
+      "overlayTexture": "textures/gui/chemrail_scope_pip.png",
+      "maskTexture": "textures/gui/chemrail_scope_mask.png",
+      "zoom": 0.7,
+      "parallax": true,
+      "maxAngularOffset": 1.75,
+      "altZoom": 0.8
+    }
+  ]
+}

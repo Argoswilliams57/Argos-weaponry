@@ -1,0 +1,38 @@
+{
+  "name" : "aw_heavy_stock",
+  "type": "Attachment",
+  "category": "stock",
+  "groups": [
+    "heavy_stocks",
+    "factory_stock"
+  ],
+  "features" : [
+
+    {
+      "type": "Recoil",
+      "recoilModifier": 1.5,
+      "condition": {
+        "hasAttachmentGroup": "heavy_stocks"
+      }
+    },
+    {
+      "type": "Accuracy",
+      "accuracyModifier": 2.7
+    },
+
+    {
+      "type": "PartVisibility",
+      "parts": [
+        {
+          "name": "heavy_stock",
+          "visible": true,
+          "condition": {
+            "isGunInHands": false
+          }
+        }
+      ]
+    }
+
+  ]
+
+}

@@ -1,0 +1,515 @@
+{
+  "name": "aw_mp5_classic",
+  "type": "Gun",
+  "maxAmmoCapacity": 30,
+  "compatibleAmmo": ["ammocreative" ,"aw_smg_ammo"],
+  "damage": 6,
+  "rpm": 920,
+  "fireModes": ["SINGLE"],
+  "fireSound": "aw_mp5_classic_fire",
+  "aimingZoom": 0.3,
+  "ammoUi": "aw_ammo_ui",
+  "gunRecoilInitialAmplitude": 0.3,
+  "shakeRecoilAmplitude": 0.5,
+  "shakeRecoilSpeed": 2,
+  "viewRecoilAmplitude": 0.2,
+  "firstPersonFallbackAnimations": "walking_animations",
+  "drawCooldownDuration": 940,
+  "toggle_aiming": true,
+  "aimingEnabled" : true,
+  "noADSDuringInspect": true,
+  "disableAdsDuringreload": false,
+  "sustainedRecoil": {
+    "posZCap": 0.22,  // weapon moves backward slightly each shot.
+    "posZIncrement": 0.05, // after about 3 shots, it reaches the maximum sustained rearward movement.
+    "pitchIncrement": -0.04, // additional upward climb over sustained fire.
+    "posYIncrement": 0.3 //  vertical displacement buildup.
+  },
+//Here Idle Animations Goes as planned so I wont break anything
+
+
+  "idleAnimations": [
+    {
+      "name": "animation.model.idle",
+      "duration": 160,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.idle_empty",
+      "duration": 160,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+// Now starts Inspect Animations
+  "inspectAnimations": [
+    {
+      "name": "animation.model.inspect",
+      "duration": 7520,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.inspect_empty",
+      "duration": 7520,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+// Draw Animations also supports empty ones
+  "drawAnimations": [
+    {
+      "name": "animation.model.draw",
+      "duration": 940,
+      "condition": "ammoCount > 0"
+    },
+    {
+      "name": "animation.model.draw_empty",
+      "duration": 940,
+      "condition": "ammoCount == 0"
+    }
+  ],
+
+
+// Now here is the crazy part thing called Features on how do I want my gun to Behave  whern certain attachmentments putted
+
+  "features": [
+
+// Aiming Feature Must Required if you want to use scopes functional after putted
+    {
+      "type": "Aiming",
+      "zoom": 0.25,
+      "condition": {
+        "doesNotHaveAttachmentGroup": "ar_sightsandscopes"
+      }
+    },
+
+
+
+    //Now finally teh fire sounds will change after putting a suppressor
+    {
+      "type": "Sound",
+      "fireSounds": [
+        {
+          "sound": "mp5_classic_suppressed",
+          "volume": 2,
+          "condition": {
+            "allOf": [
+              {
+                "hasAttachmentGroup": "smg_suppressors"
+              }
+            ]
+          }
+        }
+
+
+      ]
+    },
+    {
+      "type": "custom_crosshair",
+      "enabled": true,
+      "texture": "textures/custom_crosshairs/argos_weaponry_crosshair.png",
+      "layout": "pointblank"
+    },
+    {
+      "type": "AdsConstraint",
+      "enabled": true,
+      "camera": true,
+      "cameraConstraint" : 0.6
+    },
+
+    {
+      "type": "AdsReloadZoomControl",
+      "enabled": true,
+      "zoom_type": "smooth",
+      // Available Values
+      // linear
+      //smooth
+      //ease_in
+      //ease_out
+      //ease_in_out
+      //sine_in
+      //sine_out
+      //sine_in_out
+      "amount": 0.08
+    },
+
+    {
+      "type": "Melee",
+      "enabled": true,
+      "damage": 8.0,
+      "cooldown": 20,
+      "reach": 3.0,
+      "damageCatsandOcalotsEntities" : true,
+      "meleeAnimations": [
+        {
+          "name": "animation.model.melee_1",
+          "duration": 700,
+          "preMelee": 200
+        },
+        {
+          "name": "animation.model.melee_2",
+          "duration": 870,
+          "preMelee": 220
+        },
+        {
+          "name": "animation.model.melee_3",
+          "duration": 850,
+          "preMelee": 220
+        }
+      ]
+    },
+
+
+
+
+
+
+    // Now If I Want my default ironsights to be dissappeard when putting a scope "Part Visibility feature needed
+    {
+      "type": "PartVisibility",
+      "parts": [
+
+        {
+          "name": "iron_sights",
+          "visible": false,
+          "condition": {
+            "hasAttachmentGroup": "ar_sightsandscopes"
+          }
+        },
+
+        {
+          "name": "sight_mount",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "ar_sightsandscopes"
+          }
+        },
+
+
+        // Since i want the Light Stock group to be Visisble when puting a light stock , this part visibility will come handy
+        {
+          "name": "light_stock",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "light_stocks"
+          }
+        },
+        {
+          "name": "medium_stock",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "medium_stocks"
+          }
+        },
+        {
+          "name": "heavy_stock",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "heavy_stocks"
+          }
+        },
+
+        {
+          "name": "stock_default",
+          "visible": false,
+          "condition": {
+            "hasAttachmentGroup": "factory_stock"
+          }
+        },
+        {
+          "name": "ar_stock_adapter",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "aw_ar_stocks"
+          }
+        },
+
+
+         // hiding the Extended Magzines
+        {
+          "name": "mag_extended_1",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "extended_mag_1"
+          }
+        },
+        {
+          "name": "mag_extended_2",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "extended_mag_2"
+          }
+        },
+        {
+          "name": "mag_extended_3",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "extended_mag_3"
+          }
+        },
+
+        {
+          "name": "mag_default",
+          "visible": false,
+          "condition": {
+            "hasAttachmentGroup": "light_extended_mags"
+          }
+        },
+
+        // Now the 2nd Light Extended magazine
+        {
+          "name": "2nd_mag_default",
+          "visible": false,
+          "condition": {
+            "hasAttachmentGroup": "light_extended_mags"
+          }
+        },
+        {
+          "name": "2nd_mag_extended_1",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "extended_mag_1"
+          }
+        },
+        {
+          "name": "2nd_mag_extended_2",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "extended_mag_2"
+          }
+        },
+        {
+          "name": "2nd_mag_extended_3",
+          "visible": true,
+          "condition": {
+            "hasAttachmentGroup": "extended_mag_3"
+          }
+        }
+
+
+
+      ]
+    },
+
+
+
+    // Now we will use muzzle Flash Effect after putting a muzzle attachment
+    {
+      "type": "MuzzleFlash",
+      "effects": [
+        {
+          "phase": "firing",
+          "name": "muzzle_flash"
+        }
+      ],
+
+      // If the Smg Suprerssors or any kind of suppressors are putted then muzzle flash will now shown
+      "condition": {
+        "allOf": [
+          {
+            "isUsingDefaultMuzzle": true
+          },
+          {
+            "doesNotHaveAttachmentGroup": "smg_suppressors"
+          }
+        ]
+      }
+
+    },
+
+
+
+
+
+
+
+
+
+    // If i want to have fire mode switching animations we will use Dynamic fire modes
+
+    {
+      "type": "FireMode",
+      "fireModes": [
+        {
+          "name": "full_auto",
+          "displayName": "label.pointblank.fireMode.full_auto",
+          "type": "AUTOMATIC",
+          "rpm": 920,
+          "damage": 7,
+          "shakeRecoilAmplitude": 0.2,
+          "shakeRecoilSpeed": 1.0,
+          "shakeRecoilDuration": 120,
+          "enableFireModeAnimations": [
+            {
+              "name": "animation.model.switch",
+              "duration": 340
+            }
+          ]
+        },
+
+
+        {
+          "name": "semi_auto",
+          "displayName": "label.pointblank.fireMode.semi_auto",
+          "type": "SINGLE",
+          "rpm": 850,
+          "damage": 6,
+          "shakeRecoilAmplitude": 0.35,
+          "shakeRecoilSpeed": 2.0,
+          "shakeRecoilDuration": 350,
+          "enableFireModeAnimations": [
+            {
+              "name": "animation.model.switch",
+              "duration": 340
+            }
+          ]
+        },
+
+
+
+        {
+          "name": "3rnd_burst",
+          "displayName": "label.pointblank.fireMode.3rnd_burst",
+          "type": "BURST",
+          "rpm": 830,
+          "burstShots": 3,
+          "damage": 6,
+          "shakeRecoilAmplitude": 0.35,
+          "shakeRecoilSpeed": 2.0,
+          "shakeRecoilDuration": 350,
+          "enableFireModeAnimations": [
+            {
+              "name": "animation.model.switch",
+              "duration": 340
+            }
+          ]
+        }
+
+
+
+      ]
+    }
+
+
+  ],
+
+
+  "compatibleAttachmentGroups": [
+    "smg_muzzle",
+    "cantedrail",
+    "ar_sightsandscopes",
+    "sights_group",
+    "underbarrel",
+    "light_stocks",
+    "medium_stocks",
+    "heavy_stocks",
+    "aw_ar_stocks",
+    "light_extended_mags"
+
+
+
+  ],
+  "compatibleAttachments": [
+    "cantedrail"
+  ],
+
+
+// Since i want to Have Extended Magazine Reload Animations based on attachments , and atachment groups so for me ill go with Attachment group
+  "phasedReloads": [
+
+    {
+      "phase": "RELOADING",
+      "duration": 3760,
+      "animation": "animation.model.reload_empty",
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex == 0",
+          {
+            "onEmptyReload": true
+          },
+          {
+            "doesNotHaveAttachmentGroup": "extended_mag_3"
+          }
+        ]
+      }
+    },
+
+
+
+    {
+      "phase": "RELOADING",
+      "duration": 3900,
+      "animation": "animation.model.reload_extended_empty",
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex == 0",
+          {
+            "onEmptyReload": true
+          },
+          {
+            "hasAttachmentGroup": "extended_mag_3"
+          }
+        ]
+      }
+    },
+
+
+    {
+      "phase": "RELOADING",
+      "duration": 3680,
+      "animation": "animation.model.reload",
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex > 0",
+          {
+            "onEmptyReload": false
+          },
+          {
+            "doesNotHaveAttachmentGroup": "extended_mag_3"
+          }
+        ]
+      }
+    },
+
+
+    {
+      "phase": "RELOADING",
+      "duration": 2740,
+      "animation": "animation.model.reload_extended",
+
+
+      "condition": {
+        "allOf": [
+          "reloadIterationIndex > 0",
+          {
+            "onEmptyReload": false
+          },
+          {
+            "hasAttachmentGroup": "extended_mag_3"
+          }
+        ]
+      }
+
+
+    }
+  ],
+
+
+
+
+  // Effects For Muzzle Flash
+  "effects": [
+    {
+      "phase": "hit_scan_acquired",
+      "name": "tracer"
+    },
+    {
+      "phase": "firing",
+      "name": "muzzle_flash_small"
+    }
+  ]
+
+
+}

@@ -1,0 +1,1091 @@
+{
+    "aw_ro635_draw": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/exr_ro635/aw_ro635_draw",
+                "stream": false
+            }
+        ]
+    },
+    "aw_ro635_draw_empty": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/exr_ro635/aw_ro635_draw_empty",
+                "stream": false
+            }
+        ]
+    },
+    "aw_ro635_reload_empty": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/exr_ro635/aw_ro635_reload_empty",
+                "stream": false
+            }
+        ]
+    },
+    "aw_ro635_reload": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/exr_ro635/aw_ro635_reload",
+                "stream": false
+            }
+        ]
+    },
+    "aw_ro635_fire": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/exr_ro635/aw_ro635_fire",
+                "stream": false
+            }
+        ]
+    },
+    "aw_ro635_suppressed": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/exr_ro635/aw_ro635_suppressed",
+                "stream": false
+            }
+        ]
+    },
+    "aw_ro635_inspect": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/exr_ro635/aw_ro635_inspect",
+                "stream": false
+            }
+        ]
+    },
+    "aw_ro635_inspect_empty": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/exr_ro635/aw_ro635_inspect_empty",
+                "stream": false
+            }
+        ]
+    },
+    "exr_ro635_firemode_switch": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/exr_ro635/exr_ro635_firemode_switch",
+                "stream": false
+            }
+        ]
+    },
+
+
+
+
+
+
+    "exr_spaz12_fire": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_fire",
+                "stream": false
+            }
+        ]
+    },
+    "exr_spaz12_suppressed": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_suppressed",
+                "stream": false
+            }
+        ]
+    },
+    "exr_spaz12_chamber_load": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_chamber_load",
+                "stream": false
+            }
+        ]
+    },
+    "exr_spaz12_draw": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_draw",
+                "stream": false
+            }
+        ]
+    },
+  "exr_spaz12_draw_empty": {
+    "sounds": [
+      {
+        "name": "pointblank:item/shotguns/spaz12/exr_spaz12_draw_empty",
+        "stream": false
+      }
+    ]
+  },
+    "exr_spaz12_switch": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_switch",
+                "stream": false
+            }
+        ]
+    },
+    "exr_spaz12_inspect": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_inspect",
+                "stream": false
+            }
+        ]
+    },
+    "exr_spaz12_inspect_empty": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_inspect_empty",
+                "stream": false
+            }
+        ]
+    },
+    "exr_spaz12_pump_action": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_pump_action",
+                "stream": false
+            }
+        ]
+    },
+    "exr_spaz12_reload_finish": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_reload_finish",
+                "stream": false
+            }
+        ]
+    },
+    "exr_spaz12_reload_loop": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_reload_loop",
+                "stream": false
+            }
+        ]
+    },
+    "exr_spaz12_reload_start": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_reload_start",
+                "stream": false
+            }
+        ]
+    },
+    "exr_spaz12_reload_start_empty": {
+        "sounds": [
+            {
+                "name": "pointblank:item/shotguns/spaz12/exr_spaz12_reload_start_empty",
+                "stream": false
+            }
+        ]
+    },
+
+    "aw_mp5_classic_fire": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/mp5_classic/aw_mp5_classic_fire",
+                "stream": false
+            }
+        ]
+    },
+    "mp5_classic_inspect": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/mp5_classic/mp5_classic_inspect",
+                "stream": false
+            }
+        ]
+    },
+    "mp5_classic_inspect_empty": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/mp5_classic/mp5_classic_inspect_empty",
+                "stream": false
+            }
+        ]
+    },
+    "mp5_classic_reload_empty": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/mp5_classic/mp5_classic_reload_empty",
+                "stream": false
+            }
+        ]
+    },
+    "mp5_classic_reload_empty_extended": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/mp5_classic/mp5_classic_reload_empty_extended",
+                "stream": false
+            }
+        ]
+    },
+    "mp5_classic_reload_normal_extended": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/mp5_classic/mp5_classic_reload_normal_extended",
+                "stream": false
+            }
+        ]
+    },
+    "mp5_classic_reload_tactical": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/mp5_classic/mp5_classic_reload_tactical",
+                "stream": false
+            }
+        ]
+    },
+    "mp5_classic_suppressed": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/mp5_classic/mp5_classic_suppressed",
+                "stream": false
+            }
+        ]
+    },
+    "mp5_classic_switch": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/mp5_classic/mp5_classic_switch",
+                "stream": false
+            }
+        ]
+    },
+    "mp5_classic_draw": {
+        "sounds": [
+            {
+                "name": "pointblank:item/smgs/mp5_classic/mp5_classic_draw",
+                "stream": false
+            }
+        ]
+    },
+
+
+  "aw_marlin_fire": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_fire",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_suppressed": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_suppressed",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_chamber_load": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_chamber_load",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_inspect_draw": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_inspect_draw",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_inspect_empty_end": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_inspect_empty_end",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_inspect_empty_lever_close": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_inspect_empty_lever_close",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_inspect_empty_lever_open": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_inspect_empty_lever_open",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_inspect_empty_rotate": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_inspect_empty_rotate",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_inspect_empty_start": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_inspect_empty_start",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_inspect_end": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_inspect_end",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_inspect_lever_ammo_catch": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_inspect_lever_ammo_catch",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_inspect_lever_ammo_insert": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_inspect_lever_ammo_insert",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_inspect_rotate_1": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_inspect_rotate_1",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_inspect_start_raise": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_inspect_start_raise",
+        "stream": false
+      }
+    ]
+  },
+
+  "aw_marlin_lever_action": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_lever_action",
+        "stream": false
+      }
+    ]
+  },
+
+  "aw_marlin_reload_end": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_reload_end",
+        "stream": false
+      }
+    ]
+  },
+
+  "aw_marlin_reload_start": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_reload_start",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_reload_loop": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_reload_loop",
+        "stream": false
+      }
+    ]
+  },
+  "aw_marlin_reload_start_empty": {
+    "sounds": [
+      {
+        "name": "pointblank:item/lever_action_rifles/marlin/aw_marlin_reload_start_empty",
+        "stream": false
+      }
+    ]
+  },
+
+
+
+
+  "makarov_draw": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_draw",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_draw_out": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_draw_out",
+        "stream": false
+      }
+    ]
+  },
+  "aw_makarov_fire": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/aw_makarov_fire",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_inspect_chamber_check": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_inspect_chamber_check",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_inspect_empty_ext_mag_in": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_inspect_empty_ext_mag_in",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_inspect_empty_ext_mag_out": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_inspect_empty_ext_mag_out",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_inspect_empty_mag_out": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_inspect_empty_mag_out",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_inspect_empty_mag_in": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_inspect_empty_mag_in",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_inspect_ext_mag_in": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_inspect_empty_mag_in",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_inspect_ext_mag_out": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_inspect_ext_mag_out",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_inspect_finish": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_inspect_finish",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_inspect_mag_out": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_inspect_mag_out",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_inspect_mag_in": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_inspect_mag_in",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_reload_empty_charge": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_reload_empty_charge",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_reload_empty_ext_charge": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_reload_empty_ext_charge",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_reload_empty_ext_mag_in": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_reload_empty_ext_mag_in",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_reload_empty_ext_mag_out": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_reload_empty_ext_mag_out",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_reload_empty_mag_in": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_reload_empty_mag_in",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_reload_empty_mag_out": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_reload_empty_mag_out",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_reload_ext_mag_in": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_reload_ext_mag_in",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_reload_ext_mag_out": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_reload_ext_mag_out",
+        "stream": false
+      }
+    ]
+  },
+
+  "makarov_reload_mag_in": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_reload_mag_in",
+        "stream": false
+      }
+    ]
+  },
+  "makarov_reload_mag_out": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/makarov/makarov_reload_mag_out",
+        "stream": false
+      }
+    ]
+  },
+
+
+
+
+  "aw_zsp45_fire": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/zsp45/aw_zsp45_fire",
+        "stream": false
+      }
+    ]
+  },
+  "zsp45_fire_last": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/zsp45/zsp45_fire_last",
+        "stream": false
+      }
+    ]
+  },
+  "zsp45_draw": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/zsp45/zsp45_draw",
+        "stream": false
+      }
+    ]
+  },
+  "zsp45_draw_empty": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/zsp45/zsp45_draw_empty",
+        "stream": false
+      }
+    ]
+  },
+  "aw_zsp45_suppressed": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/zsp45/aw_zsp45_suppressed",
+        "stream": false
+      }
+    ]
+  },
+  "zsp45_inspect": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/zsp45/zsp45_inspect",
+        "stream": false
+      }
+    ]
+  },
+  "zsp45_inspect_empty": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/zsp45/zsp45_inspect_empty",
+        "stream": false
+      }
+    ]
+  },
+  "zsp45_reload": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/zsp45/zsp45_reload",
+        "stream": false
+      }
+    ]
+  },
+  "zsp45_reload_empty": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/zsp45/zsp45_reload_empty",
+        "stream": false
+      }
+    ]
+  },
+  "zsp45_reload_ext": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/zsp45/zsp45_reload_ext",
+        "stream": false
+      }
+    ]
+  },
+  "zsp45_reload_ext_empty": {
+    "sounds": [
+      {
+        "name": "pointblank:item/pistols/zsp45/zsp45_reload_ext_empty",
+        "stream": false
+      }
+    ]
+  },
+
+
+  "aw_an94_fire": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/aw_an94_fire",
+        "stream": false
+      }
+    ]
+  },
+  "an94_draw": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/an94_draw",
+        "stream": false
+      }
+    ]
+  },
+  "an94_draw_empty": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/an94_draw_empty",
+        "stream": false
+      }
+    ]
+  },
+  "an94_inspect_magin": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/an94_inspect_magin",
+        "stream": false
+      }
+    ]
+  },
+  "an94_inspect_magout_catch": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/an94_inspect_magout_catch",
+        "stream": false
+      }
+    ]
+  },
+  "an94_inspect_start": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/an94_inspect_start",
+        "stream": false
+      }
+    ]
+  },
+  "an94_magin": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/an94_magin",
+        "stream": false
+      }
+    ]
+  },
+  "an94_magout": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/an94_magout",
+        "stream": false
+      }
+    ]
+  },
+  "an94_reload_empty_charge": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/an94_reload_empty_charge",
+        "stream": false
+      }
+    ]
+  },
+  "an94_reload_empty_magin": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/an94_reload_empty_magin",
+        "stream": false
+      }
+    ]
+  },
+  "an94_reload_empty_magout": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/an94_reload_empty_magout",
+        "stream": false
+      }
+    ]
+  },
+  "aw_an94_suppressed": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/aw_an94_suppressed",
+        "stream": false
+      }
+    ]
+  },
+  "aw_an94_switch": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/aw_an94_switch",
+        "stream": false
+      }
+    ]
+  },
+  "aw_an94_fire_last": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/an94/aw_an94_fire_last",
+        "stream": false
+      }
+    ]
+  },
+
+
+
+  "aw_cz_fire": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/cz/aw_cz_fire",
+        "stream": false
+      }
+    ]
+  },
+  "aw_cz_suppressed": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/cz/aw_cz_suppressed",
+        "stream": false
+      }
+    ]
+  },
+  "cz_draw": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/cz/cz_draw",
+        "stream": false
+      }
+    ]
+  },
+  "cz_draw_empty": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/cz/cz_draw_empty",
+        "stream": false
+      }
+    ]
+  },
+  "cz_inspect_start": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/cz/cz_inspect_start",
+        "stream": false
+      }
+    ]
+  },
+  "cz_inspect_finish": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/cz/cz_inspect_finish",
+        "stream": false
+      }
+    ]
+  },
+  "cz_reload": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/cz/cz_reload",
+        "stream": false
+      }
+    ]
+  },
+  "cz_reload_empty": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/cz/cz_reload_empty",
+        "stream": false
+      }
+    ]
+  },
+  "cz_switch": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/cz/cz_switch",
+        "stream": false
+      }
+    ]
+  },
+  "aw_chem_fire": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/chemrail/aw_chem_fire",
+        "stream": false
+      }
+    ]
+  },
+  "chem_draw": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/chemrail/chem_draw",
+        "stream": false
+      }
+    ]
+  },
+  "chem_inspect": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/chemrail/chem_inspect",
+        "stream": false
+      }
+    ]
+  },
+  "chem_prefire": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/chemrail/chem_prefire",
+        "stream": false
+      }
+    ]
+  },
+  "chem_reload": {
+    "sounds": [
+      {
+        "name": "pointblank:item/assault_rifles/chemrail/chem_reload",
+        "stream": false
+      }
+    ]
+  },
+
+
+
+
+  "aw_axmc_bolt_action": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_bolt_action",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_draw": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_draw",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_draw_empty": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_draw_empty",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_draw_first": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_draw_first",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_fire": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_fire",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_hide": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_hide",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_inspect_1": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_inspect_1",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_inspect_2": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_inspect_2",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_inspect_3": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_inspect_3",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_inspect_4": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_inspect_4",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_inspect_empty_1": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_inspect_empty_1",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_inspect_empty_2": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_inspect_empty_2",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_inspect_empty_3": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_inspect_empty_3",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_reload": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_reload",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_reload_empty": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_reload_empty",
+        "stream": false
+      }
+    ]
+  },
+  "aw_axmc_suppressed": {
+    "sounds": [
+      {
+        "name": "pointblank:item/snipers/axmc/aw_axmc_suppressed",
+        "stream": false
+      }
+    ]
+  },
+
+  "pistol_melee_swing": {
+    "sounds": [
+      {
+        "name": "pointblank:item/melee_swings/pistol_swings/pistol_melee_swing",
+        "stream": false
+      }
+    ]
+  },
+
+  "rifle_melee_swing": {
+    "sounds": [
+      {
+        "name": "pointblank:item/melee_swings/rifle_swings/rifle_melee_swing",
+        "stream": false
+      }
+    ]
+  }
+
+
+
+
+
+
+
+
+
+}
